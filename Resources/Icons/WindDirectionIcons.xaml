@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTemplate x:Key="wind_direction" TargetType="Control">
+        <Grid>
+            <Polygon Points="0,0 80,50, 0,50" Stroke="Black" Fill="LightGray" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="wind_arrow_bottom" TargetType="Control">
+        <Grid>
+            <Path Margin="30, 10, 0, 10" Stroke="Black" StrokeThickness="3" Data="M 10 0 L 16 4 L 10 8 M 0 4 L 16 4" >
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                        <RotateTransform Angle="90" />
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="wind_arrow_right" TargetType="Control">
+        <Grid>
+            <Path Margin="30, 10, 0, 10" Stroke="Black" StrokeThickness="3" Data="M 10 0 L 16 4 L 10 8 M 0 4 L 16 4" >
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                        <RotateTransform Angle="0" />
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="wind_arrow_left" TargetType="Control">
+        <Grid>
+            <Path Margin="30, 10, 0, 10" Stroke="Black" StrokeThickness="3" Data="M 10 0 L 16 4 L 10 8 M 0 4 L 16 4" >
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                        <RotateTransform Angle="180" />
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="wind_arrow_top" TargetType="Control">
+        <Grid>
+            <Path Margin="30, 10, 0, 10" Stroke="Black" StrokeThickness="3" Data="M 10 0 L 16 4 L 10 8 M 0 4 L 16 4" >
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                        <RotateTransform Angle="-90" />
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

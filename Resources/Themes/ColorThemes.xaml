@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <LinearGradientBrush x:Key="MainWindowBackground">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="#FF5F60 "/>
+            <GradientStop Offset="1" Color="#FFC371"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeftSideButtonBackground" Color="LightGray"/>
+    <SolidColorBrush x:Key="DayForecastFullInfoBackground" Color="#D6FFFF"/>
+    <SolidColorBrush x:Key="HourlyForecastFullInfoBackground" Color="LightGreen"/>
+    
+    <SolidColorBrush x:Key="PagesTipsForeground" Color="White"/>
+    <SolidColorBrush x:Key="MainForeground" Color="#000000"/>    
+</ResourceDictionary>

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="BeautifulWeather.Views.Home.DayForecastDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:m="clr-namespace:BeautifulWeather.Models"
+             xmlns:converters="clr-namespace:BeautifulWeather.Resources.Converters"
+             xmlns:local="clr-namespace:BeautifulWeather.Views.Home"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <m:DayForecastModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <converters:WeatherCodeToIconConverter x:Key="WeatherCodeToIconConverter"/>
+        <converters:WindDirectionConverter x:Key="WindDirectionConverter"/>
+        <converters:TemperatureConverter x:Key="TemperatureConverter"/>
+        <converters:WeekDayConverter x:Key="WeekDayConverter"/>
+        <converters:DateConverter x:Key="DateConverter"/>
+        <converters:PressureConverter x:Key="PressureConverter"/>
+        <converters:WindSpeedConverter x:Key="WindSpeedConverter"/>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource DayForecastFullInfoBackground}">
+        <StackPanel x:Name="Details_StackPanel"
+                    Orientation="Vertical">
+            <Label Content="{Binding Path=Location}"/>
+            <Control Template="{Binding Weather, Converter={StaticResource WeatherCodeToIconConverter}}"/>
+            <Label Content="{Binding Path=Date, Converter={StaticResource DateConverter}}"/>
+            <Label Content="{Binding Path=WeekDay, Converter={StaticResource WeekDayConverter}}"/>
+            <Label Content="{Binding Path=MaxTemperature, Converter={StaticResource TemperatureConverter}}"/>
+            <Label Content="{Binding Path=MinTemperature, Converter={StaticResource TemperatureConverter}}"/>
+            <Label Content="{Binding Path=Pressure, Converter={StaticResource PressureConverter}}"/>
+            <Label Content="{Binding Path=WindSpeed, Converter={StaticResource WindSpeedConverter}}"/>
+            <Control Template="{Binding WindDirection, Converter={StaticResource WindDirectionConverter}}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,85 @@
+﻿<Window x:Class="BeautifulWeather.Views.Auth.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeautifulWeather.Views.Auth"
+        mc:Ignorable="d"
+        Name="RegisterWindow"
+        Title="{DynamicResource RegistrationWindowTitle}" Height="300" Width="350"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label
+            Grid.Row="0"
+            Content="{DynamicResource Registration}"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"
+            FontSize="20"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label 
+                Content="{DynamicResource Login}"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
+                Margin="10"/>
+            <TextBox
+                x:Name ="RegLogin_TextBox"
+                Text="{Binding NewLogin}"
+                Grid.Column="1"
+                Width="200"
+                HorizontalAlignment="Right"
+                FontSize="20"
+                Margin="10"/>
+            <Label
+                Grid.Row="1"
+                Content="{DynamicResource Password}"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
+                Margin="10"/>
+            <TextBox
+                x:Name ="RegPassword_TextBox"
+                Text="{Binding NewPassword}"
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="200"
+                HorizontalAlignment="Right"
+                FontSize="20"
+                Margin="10"/>
+            <Label
+                Grid.Row="2"
+                Content="{DynamicResource RepeatPassword}"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
+                Margin="10"/>
+            <TextBox
+                x:Name ="RegConfirm_TextBox"
+                Text="{Binding ConfirmPassword}"
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="200"
+                HorizontalAlignment="Right"
+                FontSize="20"
+                Margin="10"/>
+        </Grid>
+        <Button
+            x:Name="Registration_Button"
+            Command="{Binding RegistrationCommand}"
+            CommandParameter="{Binding ElementName=RegisterWindow}"
+            Grid.Row="3"
+            Content="{DynamicResource Register}"
+            Margin="10"/>
+    </Grid>
+</Window>
